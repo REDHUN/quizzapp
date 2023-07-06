@@ -21,9 +21,11 @@ class MyhomePage extends StatelessWidget {
             const SizedBox(
               height: 100,
             ),
-            const ElevatedButton(
-              onPressed: null,
-              child: Text('Start Quiz'),
+            OutlinedButton.icon(
+              onPressed: () {},
+              style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
+              label: Text('Start Quiz'),
+              icon: Icon(Icons.arrow_circle_right),
             ),
           ],
         ));
