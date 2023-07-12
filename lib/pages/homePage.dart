@@ -16,6 +16,7 @@ class MyhomePage extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               child: Image.asset(
                 'assets/quiz-logo.png',
+                color: Colors.white12,
               ),
             ),
             const SizedBox(
@@ -24,8 +25,8 @@ class MyhomePage extends StatelessWidget {
             OutlinedButton.icon(
               onPressed: () {},
               style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
-              label: Text('Start Quiz'),
-              icon: Icon(Icons.arrow_circle_right),
+              label: const Text('Start Quiz'),
+              icon: const Icon(Icons.arrow_circle_right),
             ),
           ],
         ));
