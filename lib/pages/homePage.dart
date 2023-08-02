@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class MyhomePage extends StatelessWidget {
-  const MyhomePage({super.key});
+class MyhomePage extends StatefulWidget {
+  const MyhomePage(this.startQuiz, {super.key});
+  final void Function() startQuiz;
 
+  @override
+  State<MyhomePage> createState() => _MyhomePageState();
+}
+
+class _MyhomePageState extends State<MyhomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,7 +29,7 @@ class MyhomePage extends StatelessWidget {
               height: 100,
             ),
             OutlinedButton.icon(
-              onPressed: () {},
+              onPressed: widget.startQuiz,
               style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
               label: const Text('Start Quiz'),
               icon: const Icon(Icons.arrow_circle_right),
