@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:quizapp/pages/result_screen.dart';
+import 'package:quizapp/widgets/correctanduseranser.dart';
+import 'package:quizapp/widgets/result_identifier.dart';
+import 'package:quizapp/widgets/resultscreen_countbox.dart';
 
 class QuestionSummery extends StatelessWidget {
   const QuestionSummery(this.summeryData, {super.key});
@@ -16,16 +20,23 @@ class QuestionSummery extends StatelessWidget {
               .map(
                 (data) => Row(
                   children: [
-                    Text(((data['question index'] as int) + 1).toString()),
+                    ResultscreenCountbox(
+                        count:
+                            ((data['question index'] as int) + 1).toString()),
                     Expanded(
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(data['question'] as String),
+                          Resultidentifier(
+                              identifier: data['question'] as String),
                           const SizedBox(
                             height: 5,
                           ),
-                          Text(data['user answer'] as String),
-                          Text(data['correct answer'] as String),
+                          CorrectUserAnswer(
+                              correctuseranswer: data['user answer'] as String),
+                          CorrectUserAnswer(
+                              correctuseranswer:
+                                  data['correct answer'] as String),
                         ],
                       ),
                     ),
